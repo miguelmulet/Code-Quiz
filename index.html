@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- favicon -->
   <link rel="shortcut icon" type="icon" href="./assets/images/favicon.ico">
+  <!-- title -->
   <title>Coding Quiz</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- addition of custom font -->
@@ -15,26 +17,33 @@
 </head>
 
 <body>
+  <!-- high score button -->
   <div class="scores"><a href="highscore.html">View Highscores</a></div>
 
+  <!-- Countdown Timer -->
   <div class="timer">Time: <span id="time">0</span></div>
 
+  <!-- Main Body Wrapper -->
   <div class="wrapper">
     <div id="start-screen" class="start">
       <h1>JavaScript Coding Quiz</h1>
       <p>
         Within the time limit, try to answer the following code-related questions. Keep in mind that incorrect responses will deduct 10 seconds from your time and score!
       </p>
+      <!-- Start Quiz Button -->
       <button id="start">Start Quiz</button>
     </div>
 
+    <!-- Proceeds to Questions -->
     <div id="questions" class="hide">
       <h2 id="question-title"></h2>
       <div id="choices" class="choices"></div>
     </div>
 
+    <!-- Quiz Ending Page -->
     <div id="end-screen" class="hide">
       <h2>Great Job, You've Finished The Quiz!</h2>
+      <!-- Display final score -->
       <p>Your final score is <span id="final-score"></span>.</p>
       <p>
         Enter initials: <input type="text" id="initials" max="2" />
@@ -45,6 +54,7 @@
     <div id="feedback" class="feedback hide"></div>
   </div>
 
+  <!-- linkage of JS files -->
   <script src="./assets/js/questions.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
