@@ -53,5 +53,25 @@ var questions = [
       title: "When interpreter encounters an empty statements, what it will do:",
       choices: ["Shows a warning", "Prompts to complete the statement", "Throws an error", "Ignores the statements"],
       answer: "Ignores the statements"
+    },
+    {
+      title: "Choose the correct snippet from the following to check if the variable 'a' is not equal the 'NULL':",
+      choices: ["if(a!==null)", "if (a!)", "if(a!null)", "if(a!=null)"],
+      answer: "if(a!==null)"
+    },
+    {
+      title: "In JavaScript, what will be used for calling the function defenition expression:",
+      choices: ["Function prototype", "Function literal", "Function calling", "Function declaration"],
+      answer: "Function literal"
+    },
+    {
+      title: "Which one of the following operator is used to check whether a specific property exists or not:",
+      choices: ["Exists", "exist", "within", "in"],
+      answer: "in"
+    },
+    {
+      title: "Which of the following is an ternary operator:",
+      choices: ["?", ":", "-", "+"],
+      answer: "?"
     }
 ];
