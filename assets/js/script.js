@@ -1,14 +1,11 @@
-var questionsEl = document.querySelector("#questions");
-var timerEl = document.querySelector("#time");
-var choicesEl = document.querySelector("#choices");
-var submitBtn = document.querySelector("#submit");
-var startBtn = document.querySelector("#start");
-var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
+var initialsEl = document.querySelector("#initials");
+var startBtn = document.querySelector("#start");
+var submitBtn = document.querySelector("#submit");
+var choicesEl = document.querySelector("#choices");
+var timerEl = document.querySelector("#time");
+var questionsEl = document.querySelector("#questions");
 
-var currentQuestionIndex = 0;
-var time = questions.length * 15;
-var timerId;
 
 function startQuiz() {
   var startScreenEl = document.getElementById("start-screen");
@@ -22,6 +19,10 @@ function startQuiz() {
 
   getQuestion();
 }
+
+var currentQuestionIndex = 0;
+var time = questions.length * 12;
+var timerId;
 
 function getQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
@@ -54,11 +55,11 @@ function questionClick() {
     timerEl.textContent = time;
     feedbackEl.textContent = "Wrong!";
     feedbackEl.style.color = "red";
-    feedbackEl.style.fontSize = "300%";
+    feedbackEl.style.fontSize = "200%";
   } else {
     feedbackEl.textContent = "Correct!";
     feedbackEl.style.color = "green";
-    feedbackEl.style.fontSize = "300%";
+    feedbackEl.style.fontSize = "200%";
   }
 
   feedbackEl.setAttribute("class", "feedback");
@@ -74,3 +75,55 @@ function questionClick() {
     getQuestion();
   }
 }
+
+function quizEnd() {
+  clearInterval(timerId);
+
+  var endScreenEl = document.getElementById("end-screen");
+  endScreenEl.removeAttribute("class");
+
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = time;
+
+  questionsEl.setAttribute("class", "hide");
+}
+
+function clockTick() {
+  time--;
+  timerEl.textContent = time;
+
+  if (time <= 0) {
+    quizEnd();
+  }
+}
+
+function saveHighscore() {
+  var initials = initialsEl.value.trim();
+
+  if (initials !== "") {
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+    };
+
+    var newScore = {
+      score: time,
+      initials: initials
+    };
+
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    window.location.href = "highscore.html";
+};
+
+function checkForEnter(event) {
+  if (event.key === "Enter") {
+    saveHighscore();
+  }
+}
+
+submitBtn.onclick = saveHighscore;
+
+startBtn.onclick = startQuiz;
+
+initialsEl.onkeyup = checkForEnter;1469
