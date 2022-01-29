@@ -37,6 +37,11 @@ body {
     max-width: 600px;
 }
 
+.wrapper h1 {
+    font-family: 'BioRhyme';
+    text-align: center;
+}
+
 .start {
     font-family: 'BioRhyme', serif;
     text-align: center;
