@@ -3,6 +3,7 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+/* High Score Button Styles */
 .scores {
     display: inline-block;
     margin: 5px;
@@ -21,6 +22,7 @@ body {
     background-color: gray;
 }
 
+/* Timer Styles */
 .timer {
     font-size: 130%;
     position: absolute;
@@ -32,6 +34,7 @@ body {
     margin: 5px;
 }
 
+/* Main Page Wrapper Styles */
 .wrapper {
     margin: 100px auto 0 auto;
     max-width: 600px;
@@ -42,6 +45,7 @@ body {
     text-align: center;
 }
 
+/* Start Styles */
 .start {
     font-family: 'BioRhyme', serif;
     text-align: center;
@@ -52,10 +56,12 @@ body {
     font-family: 'Oswald', serif;
 }
 
+/* Questions Hide */
 .hide {
     display: none;
 }
 
+/* In Quiz Choice Button Styles */
 .choices button {
     display: block;
 }
@@ -69,7 +75,8 @@ a {
 a:hover {
     color: #70707a;
 }
-  
+
+/* In Quiz Button Styles */  
 button {
     display: inline-block;
     margin: 5px;
@@ -88,6 +95,7 @@ button:hover {
     background-color: gray;
 }
 
+/* Feedback Styles */
 .feedback {
     font-style: normal;
     font-size: 120%;
@@ -100,7 +108,8 @@ button:hover {
 input[type="text"] {
     font-size: 100%;
 }
-  
+
+/* Ordered List Styles */  
 ol {
     padding-left: 0px;
     max-height: 400px;
